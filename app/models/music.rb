@@ -42,9 +42,4 @@ class Music
 	response = get("#{base_path}genre=#{genre}&year=#{year}&per_page=50&page=1&#{api_key}&#{secret}", headers: {"User-Agent" => "music_list/0.1"})  
 	end
 	
-
-
-	
-
-
 end
