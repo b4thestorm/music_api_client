@@ -1,1 +1,13 @@
 <h1>Welcome to the Throwback Music App</h1>
+
+<%= form_tag("/music/new", method: "get") do %>
+  <%= label_tag(:id, "Type Desired Artist:") %>
+  <%= text_field_tag(:id) %>
+  <%= submit_tag("Submit Artist Id") %>
+<% end %>
+</br>
+---Results 
+
+
+
+<%=link_to 'Search', new_music_path%>

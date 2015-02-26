@@ -1,17 +1,14 @@
 class MusicController < ApplicationController
-	
+	require 'json'
 	def index
-		#Displays the splash page
+		@id = params[:id]	
 	end
 
-	def new
-		@genre = params[:genre]
-		@year = params[:year]
-		@search = Music.new(@genre,@year)
+	def new 
+		@id = params[:id]
+		@search = Music.get_artist(@id)
+		@json = JSON.parse(@search) 
 	end
 
-	def create
-		@search.full_search if @search.save
-	end
 
 end
