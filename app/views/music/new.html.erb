@@ -1,3 +1,7 @@
 <%=@id%>
-<h1><%=@year%></h1>
-<%=@search%>
+
+<ul>
+<% @content["releases"].each do |event|%>
+	<li><%= event["title"] %> - <%= event["year"] %> - <%= event["resource_url"] %></li>
+<%end%>
+</ul>

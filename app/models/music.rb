@@ -17,7 +17,6 @@ class Music
 
 	 def self.get_artist(id)
 	 	response = get("/artists/#{id}/releases", headers: {"User-Agent" => 'Music_List/0.1'})
-	 	return handle = JSON.parse(response.body)
 	 end
 
 	 # def full_search
