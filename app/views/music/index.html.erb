@@ -1,26 +1,7 @@
-<h1>Welcome to the Flashback Music App</h1>
-<h4>How it Works:</h4>
-<hr>
-<p>You type in the age you want to make a playlist from</p>
-<p>and type the genre/s you are most interested in</p>
-<p>and we return to you a list of all the major releases</p> 
-<p>from that tender age. Then you can pick all your favorite for</p>
-<p>a generated playlist from that year.</p>
-
-<%= form_tag("/music/new", method: "get") do %>
-  	<%= label_tag(:id, "Type desired Artist:") %>
-  	<%= text_field_tag(:id) %>
-  </br>
-	<%= label_tag(:age, "What Age were you?")%>
-	<%= text_field_tag(:age)%>
-	</br>
-	<%= label_tag(:dob, "What Year were you Born in?")%>
-	<%= text_field_tag(:dob)%>
-	<%= submit_tag("Submit") %>
-	<%end%>
-</br>
+<div class="logo">
+<h1>Music Time Machine</h1>
+<%=link_to 'New List', new_music_path, class: 'ghost-button'%>
+</div>
 
 
 
-
-<%=link_to 'Search', new_music_path%>

@@ -1,7 +1,2 @@
-<%=@id%>
 
-<ul>
-<% @content["releases"].each do |event|%>
-	<li><%= event["title"] %> - <%= event["year"] %> - <%= event["resource_url"] %></li>
-<%end%>
-</ul>
+<%=@search.to_json%>

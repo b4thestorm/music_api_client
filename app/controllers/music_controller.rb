@@ -10,10 +10,7 @@ class MusicController < ApplicationController
 	end
 
 	def new 
-		@id = params[:id]
-		@search = Music.get_artist(@id)
-		@content = JSON.parse(@search.body)
-		puts @content
+		@search = Music.query_songs		
 	end
 
 
