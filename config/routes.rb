@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'music#index', via: :get
+  resource :session, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create]
+  root to: 'home#index', via: :get
   resources :music, only: [:index,:new,:create]
 end
