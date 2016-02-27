@@ -12,7 +12,7 @@
         <h4 class="modal-title">Log In</h4>
         </div>
         <div class="modal-body">
-        <%= form_for @user , url: '/session/new' do |form| %>
+        <%= form_for @user , url: '/session' do |form| %>
         <div class="form-group">
         <% if @user.errors.any? %>
         <%= pluralize(@user.errors.count, "error") %> prevented your account from being created:

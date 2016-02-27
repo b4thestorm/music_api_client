@@ -1,9 +1,9 @@
 class MusicController < ApplicationController
-	require 'json'
+ require 'json'
 	
-	def new 
-		@search = Music.query_songs		
-	end
+  def new 
+     @search = Music.query_songs		
+  end
 
 
 end

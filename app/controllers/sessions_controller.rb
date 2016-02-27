@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = authenticate_session(session_params)
 
     if sign_in(user)
-      redirect_to root_path
+      redirect_to users_path
     else
       render :new
     end
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:session).permit(:email, :password)
+    params.require(:user).permit(:email, :password)
   end
 end
 
