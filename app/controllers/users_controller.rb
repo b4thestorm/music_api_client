@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
-  def index 
-
-  end
-
   def new
     @user = User.new
   end
@@ -14,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.valid?
       sign_in(@user)
-      redirect_to users_path
+      redirect_to user_playlist_index_path(current_user)
     else
       render :new
     end

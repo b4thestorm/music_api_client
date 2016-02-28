@@ -20,6 +20,7 @@ gem 'spring', '~> 1.3.2',       group: :development
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'monban'
 gem 'monban-generators'
+gem 'mechanize'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
