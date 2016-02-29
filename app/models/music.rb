@@ -14,10 +14,11 @@ url = 'http://www.billboard.com/charts'
 browser.visit url 
 browser.all(:xpath, '//*[@id="block-views-charts-block-bbcom-charts--5"]/div/div/div/div[49]/div[1]/span/a')[0].click
 
-#grabs the form
-browser.find(:xpath, '//*[@id="main"]/div[3]/div[3]/aside[2]/form/div/input').set('10/21/2001')
-browser.find(:xpath, '//*[@id="main"]/div[3]/div[3]/aside[2]/form/div/button').click 
-
+#grabs the form to get the popular singles information 
+browser.find(:xpath, '//*[@id="main"]/div[3]/div[3]/aside[2]/form/div/input').set(10212001)
+browser.find(:xpath,'//*[@id="main"]/div[3]/div[3]/aside[2]/form/div/button').click
+sleep 5
+browser.find(:xpath, '//*[@id="main"]/div[3]/div[3]/aside[2]/section/a').click
 
 browser.save_and_open_page
   
