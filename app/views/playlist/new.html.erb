@@ -1,3 +1,7 @@
-<%=@search%>
+<%=form_for [@user, @playlist], url:'users/:user_id/playlist/new' do |f|%>
+<%binding.pry%>
+<%=f.select current_user.age%>
+<%=f.select 'Choose Genre' %>
+<%end%>
 
 

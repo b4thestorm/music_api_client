@@ -1,11 +1,17 @@
 class PlaylistController < ApplicationController
 require 'json'
+ before_action :require_login
+ before_action :set_user
 
-   def index
-    @user = current_user
-   end
+   def index; end
 
    def new  
-     @search = Music.new	
+     @playlist = Playlist.new	
    end
+
+private 
+   
+   def set_user
+    @user = current_user
+   end 
 end

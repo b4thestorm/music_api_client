@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303123758) do
+ActiveRecord::Schema.define(version: 20160303141736) do
 
   create_table "playlists", force: :cascade do |t|
-    t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "age"
+    t.string   "genre"
   end
 
   add_index "playlists", ["user_id"], name: "index_playlists_on_user_id"
@@ -27,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160303123758) do
     t.string   "password_digest", null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "age"
+    t.integer  "yob"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
