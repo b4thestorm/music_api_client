@@ -1,7 +1,13 @@
-<%=form_for [@user, @playlist], url:'users/:user_id/playlist/new' do |f|%>
-<%binding.pry%>
-<%=f.select current_user.age%>
-<%=f.select 'Choose Genre' %>
+<%=form_tag("/users/#{@user.id}/playlist", method: :get) do %>
+<div class="control-group">
+<%=label_tag 'Desired Age' %>
+<%=select_tag(:age ,options_for_select(@user.age_options))%><%="- yrs old"%>
+</div>
+<div class="control-group">
+<%=label_tag 'Genres' %>
+<%=select_tag(:genre ,options_for_select(Playlist::AVAILABLE_GENRES))%>
+</div>
+<%=submit_tag 'Search Genre', class: 'btn btn-success'%>
 <%end%>
 
 
