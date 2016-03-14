@@ -1,3 +1,18 @@
 <h1>Dashboard</h1>
 </br>
 <%=link_to 'New Playlist', new_user_playlist_path(current_user), class:'btn btn-primary'%>
+
+
+<%if @result%>
+<%@result.each do |x|%>
+    <div class="grid-item ">
+      <div class="title-copy">
+       <p class="type"><%=x[0]%></p>
+       <h3 id="element-title"><%=x[1]%></h3>
+     </div>
+    </div>
+    <hr>
+<%end%>
+<%end%>
+
+

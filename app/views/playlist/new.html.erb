@@ -1,10 +1,10 @@
 <%=form_tag("/users/#{@user.id}/playlist", method: :get) do %>
 <div class="control-group">
 <%=label_tag 'Desired Age' %>
-<%=select_tag(:age ,options_for_select(@user.age_options))%><%="- yrs old"%>
+<%=select_tag(:age ,options_for_select(@user.age_options))%><%=" yrs old"%>
 </div>
 <div class="control-group">
-<%=label_tag 'Genres' %>
+<%=label_tag 'Genres'%>
 <%=select_tag(:genre ,options_for_select(Playlist::AVAILABLE_GENRES))%>
 </div>
 <%=submit_tag 'Search Genre', class: 'btn btn-success'%>

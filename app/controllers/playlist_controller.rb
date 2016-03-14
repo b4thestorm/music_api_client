@@ -4,9 +4,9 @@ require 'json'
  before_action :set_user
 
    def index
-    if params
-    @search = Music.new(params[:age], params[:genre])
-    binding.pry
+    if params[:age] && params[:genre]
+    @search = Music.new(params[:age], params[:genre], params[:user_id])
+    @result = @search.scrape
     end
    end
 
@@ -16,7 +16,6 @@ require 'json'
 	
    def create
     @playlist = Playlist.new(playlist_params)
-    binding.pry
     if @playlist.save 
     flash[:notice] = '...Searching through Genre'
     else
